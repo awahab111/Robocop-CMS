@@ -8,5 +8,6 @@
    <children>
       <Button layoutX="32.0" layoutY="58.0" mnemonicParsing="false" onAction="#createFIRScene" prefHeight="25.0" prefWidth="117.0" text="CreateFIR" />
       <Text layoutX="32.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RoboCop" />
+      <Button layoutX="31.0" layoutY="116.0" mnemonicParsing="false" onAction="#policestation_btn" prefHeight="25.0" prefWidth="117.0" text="Police Stations" />
    </children>
 </AnchorPane>

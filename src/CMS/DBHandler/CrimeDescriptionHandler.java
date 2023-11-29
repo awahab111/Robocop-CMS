@@ -7,7 +7,7 @@ public class CrimeDescriptionHandler {
     public int getCrimeID(String crimeDescription){
         Database db = new Database();
         java.sql.Connection conn = db.getconn();
-        String stat = "select crimeid from crime_description where description = '" + crimeDescription + "'";
+        String stat = "select crime_id from crime_desc where crime_type = '" + crimeDescription + "'";
         try{
             Statement coStatement = conn.createStatement();
             ResultSet resultSet = coStatement.executeQuery(stat);

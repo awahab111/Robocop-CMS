@@ -12,9 +12,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.Connection;
-
 import CMS.User;
+import java.io.FileWriter;
 
 public class LoginController {
 
@@ -28,6 +27,7 @@ public class LoginController {
     @FXML
     private TextField tfusername;
 
+
     @FXML
     public void LoginClicked(ActionEvent event) throws IOException {
         String username = tfusername.getText();
@@ -38,6 +38,11 @@ public class LoginController {
         int user_id = user.getUserID(username, password);
         System.out.println("User ID: " + user_id);
         if (user_id > 0) {
+            // Create a file and insert the user_id into it
+            FileWriter fileWriter = new FileWriter("user_id.txt");
+            fileWriter.write(String.valueOf(user_id));
+            fileWriter.close();
+
             root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);

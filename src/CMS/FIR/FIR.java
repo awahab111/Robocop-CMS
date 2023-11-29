@@ -1,5 +1,8 @@
 package CMS.FIR;
 
+import java.sql.Date;
+import java.sql.Time;
+
 import CMS.DBHandler.FIRHandler;
 
 public class FIR {
@@ -80,8 +83,12 @@ public class FIR {
     }
 
 
-    public void addFIR(String date, String time, String location, String description, String status, String evidence, int crime_id){
-        firHandler.insertFIR(date, time, location, description, status, evidence, crime_id);
+    public void addFIR(Date sqlDate, Time time, String location, String description, String evidence, int crime_id, int user_id){
+        firHandler.insertFIR(sqlDate, time, location, description, evidence, crime_id, user_id);
     }
+
+    // public void addFIR(Date sqlDate, String crime, String tfloc, String desc, String tfstat, String evidence2,int crime_id2) {
+        
+    // }
 }
 
