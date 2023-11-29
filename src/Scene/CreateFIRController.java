@@ -115,4 +115,13 @@ public class CreateFIRController implements Initializable {
         }
     }
 
+    @FXML
+    void policestation_btn(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("PoliceStations.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }

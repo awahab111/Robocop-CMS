@@ -1,39 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scene.CreateFIRController">
-   <children>
-      <Text layoutX="237.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create a FIR">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Text>
-      <Text layoutX="40.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location" textAlignment="CENTER" wrappingWidth="74.56249618530273" />
-      <TextArea fx:id="ta_desc" layoutX="132.0" layoutY="169.0" prefHeight="200.0" prefWidth="142.0" />
-      <Text layoutX="40.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" textAlignment="CENTER" wrappingWidth="74.56249618530273" />
-      <TextArea fx:id="ta_evidence" layoutX="392.0" layoutY="80.0" prefHeight="200.0" prefWidth="142.0" />
-      <Text layoutX="300.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Evidence" textAlignment="CENTER" wrappingWidth="74.56249618530273" />
-      <Button layoutX="216.0" layoutY="445.0" mnemonicParsing="false" onAction="#createFIRbtn" prefHeight="30.0" prefWidth="150.0" text="Create">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Button>
-      <TextField fx:id="tflocation" layoutX="115.0" layoutY="80.0" />
-      <Text layoutX="291.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Crime Description" textAlignment="CENTER" wrappingWidth="114.56249618530273" />
-      <ChoiceBox fx:id="crime_choice" layoutX="410.0" layoutY="323.0" prefWidth="150.0" />
-      <ButtonBar layoutX="32.0" layoutY="229.0" prefHeight="40.0" prefWidth="200.0" />
-      <Button layoutY="-1.0" mnemonicParsing="false" onAction="#backbtnclicked" style="-fx-background-color: red; -fx-font-style: bold;" text="&lt; Back" textAlignment="CENTER">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Button>
-   </children>
-</AnchorPane>
+<SplitPane dividerPositions="0.2508361204013378" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scene.CreateFIRController">
+   <items>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <Button layoutX="20.0" layoutY="99.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="117.0" text="CreateFIR" />
+            <Button layoutX="20.0" layoutY="147.0" mnemonicParsing="false" onAction="#policestation_btn" prefHeight="25.0" prefWidth="117.0" text="Police Stations" />
+         </children>
+      </AnchorPane>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <Text layoutX="37.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location" textAlignment="CENTER" wrappingWidth="48.0" />
+            <TextArea fx:id="ta_desc" layoutX="37.0" layoutY="92.0" prefHeight="124.0" prefWidth="192.0" />
+            <Text layoutX="37.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" textAlignment="CENTER" wrappingWidth="61.562496185302734" />
+            <TextArea fx:id="ta_evidence" layoutX="254.0" layoutY="92.0" prefHeight="124.0" prefWidth="192.0" />
+            <Text layoutX="251.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Evidence" textAlignment="CENTER" wrappingWidth="48.0" />
+            <Button layoutX="179.0" layoutY="412.0" mnemonicParsing="false" onAction="#createFIRbtn" prefHeight="25.0" prefWidth="117.0" text="Create" />
+            <TextField fx:id="tflocation" layoutX="37.0" layoutY="256.0" prefHeight="25.0" prefWidth="192.0" />
+            <Text layoutX="255.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Crime Description" textAlignment="CENTER" wrappingWidth="97.56249618530273" />
+            <ChoiceBox fx:id="crime_choice" layoutX="254.0" layoutY="256.0" prefHeight="25.0" prefWidth="192.0" />
+            <Button mnemonicParsing="false" onAction="#backbtnclicked" style="-fx-background-color: red; -fx-font-style: bold;" text="&lt; Back" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Text layoutX="201.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create a FIR">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="40.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CNIC" textAlignment="CENTER" wrappingWidth="30.0" />
+            <TextField layoutX="40.0" layoutY="319.0" prefHeight="25.0" prefWidth="192.0" />
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>

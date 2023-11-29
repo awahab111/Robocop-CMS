@@ -34,4 +34,14 @@ public class MainViewController {
         stage.show();
     }
 
+    @FXML
+    void forum_btn(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("Forum.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
 }
