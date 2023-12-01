@@ -23,6 +23,8 @@ public class RegisterController {
     @FXML
     private TextField username;
 
+    User user;
+
     @FXML
     void LoginSceneSwitchbtn(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("Login.fxml"));
@@ -41,4 +43,5 @@ public class RegisterController {
         user.addUser(newuser, newpass);
         System.out.println("New user added");
     }
+
 }

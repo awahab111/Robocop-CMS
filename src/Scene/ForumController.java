@@ -25,6 +25,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 public class ForumController implements Initializable{
@@ -68,29 +69,30 @@ public class ForumController implements Initializable{
 
        pagination.setPageFactory((Integer pageIndex) -> {
         VBox vbox = new VBox(); // Declare and initialize vbox
-        vbox.setSpacing(50); // Set spacing between nodes
+        vbox.setSpacing(10); // Set spacing between nodes
 
         for (Post post : posts) {
             GridPane gridPane = new GridPane(); // Create a new GridPane for each post
             gridPane.setHgap(10);
-            gridPane.setVgap(10);
-
-            
+            gridPane.setVgap(1);
 
 
-            Label userIdLabel = new Label(String.valueOf("awahab"));
+            Label userIdLabel = new Label(post.getAuthor());
+            userIdLabel.prefWidthProperty().bind(dapane.widthProperty().subtract(150));
+            userIdLabel.setStyle("-fx-font-weight: bold; -fx-font-size: 13px; -fx-underline: true;");
             GridPane.setConstraints(userIdLabel, 0, 0); // Place at top left
 
-            Label dateTimeLabel = new Label("Amongus");
+            Label dateTimeLabel = new Label(post.post_time());
             GridPane.setConstraints(dateTimeLabel, 1, 0); // Place at top right
-            // GridPane.setHalignment(dateTimeLabel, HPos.RIGHT); // Align to the right
+            dateTimeLabel.setStyle("-fx-text-fill: grey; -fx-font-style: italic; -fx-font-size: 10px;");
 
-            Label contentLabel = new Label("hgcvsdhgnbdvfhsavdfs csdvjhdbhjfavd ffahvdhafcb adcvsdjd vcshdvjhsvbdjf sdfhjvbdfhj dfjsvhdf sg dfcjsvcs dcsh cds chs dcvsc hs dcvs cvsd chs cvsd cgwvhjwrjhg rhg wefhwlfhiwufbw rfwevfbhwjef wlevfhlwjebf wlfvwifwb fwjh fwjf \n dhejldbqwefwjhebfefjlbrhbfwjhbf whjrf hwbefhb hef");
+
+            Label contentLabel = new Label(post.getContent());
             GridPane.setConstraints(contentLabel, 0, 1, 2, 1); // Place at bottom, spanning 2 columns
 
             gridPane.getChildren().addAll(userIdLabel, dateTimeLabel, contentLabel);
             gridPane.setStyle("-fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 10;");
-            gridPane.prefWidthProperty().bind(dapane.widthProperty());
+            gridPane.prefWidthProperty().bind(dapane.widthProperty().subtract(2));
 
             vbox.getChildren().add(gridPane);
         }

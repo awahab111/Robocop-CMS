@@ -3,9 +3,9 @@ package CMS.DBHandler;
 import java.sql.*;
 
 public class PostHandler {
-    public void createPost(String content, Date date, Time time) {
+    public void createPost(String content, int user_id) {
         Database db = new Database();        
-        String query = "INSERT INTO posts (description, pub_dat, pub_time) VALUES ('" + content + "', '" + date + "', '" + time +"'";
+        String query = "INSERT INTO posts (description,user_id ) VALUES ('" + content + "', " + user_id + " " + ")";
         java.sql.Connection conn = db.getconn();
         try{
             Statement coStatement = conn.createStatement();

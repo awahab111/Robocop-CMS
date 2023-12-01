@@ -13,10 +13,11 @@ public class ForumHandler {
         try {
             java.sql.Connection conn = db.getconn();
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM post");
+            ResultSet rs = stmt.executeQuery("select * from post inner join user_login on post.user_id = user_login.userid");
 
             while (rs.next()) {
                 Post post = new Post();
+                post.setAuthor(rs.getString("username"));
                 post.setId(rs.getInt("post_id"));
                 post.setContent(rs.getString("description"));
                 post.setDate(rs.getString("pub_date"));

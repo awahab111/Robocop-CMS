@@ -9,12 +9,27 @@ public class User {
 
     UserLoginHandler userLoginHandler = new UserLoginHandler();
 
+    public User() {
+    }
+
+    public User(User u) {
+        this.user_ID = u.getUser_ID();
+        this.username = u.getUsername();
+        this.password = u.getPassword();
+    }
+
     public void addUser(String username, String password){
         userLoginHandler.insertUser(username, password);
     }
 
     public int getUserID(String username, String password){
-        return userLoginHandler.getUserID(username, password);
+        int id = userLoginHandler.getUserID(username, password);
+        setUser_ID(id);
+        if (id >= 0) {
+            setUsername(username);
+            setPassword(password);
+        }
+        return id;
     }
 
 

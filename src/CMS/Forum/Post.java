@@ -1,5 +1,7 @@
 package CMS.Forum;
 
+import CMS.DBHandler.PostHandler;
+
 public class Post {
     private int id;  
     private String content;
@@ -7,6 +9,8 @@ public class Post {
     private String date;
     private String time;
     private int likes;
+
+    PostHandler postHandler = new PostHandler();
 
     public int getId() {
         return id;
@@ -56,10 +60,12 @@ public class Post {
         this.likes = likes;
     }
 
-    public Object getPublishDateTime() {
-        return null;
+    public String post_time(){
+        return date + " " + time;
     }
 
-
+    public void createPost(String content, int userid){
+        
+    }
 }
 

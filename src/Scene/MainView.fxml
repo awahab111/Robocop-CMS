@@ -11,6 +11,7 @@
             <Button layoutX="20.0" layoutY="99.0" mnemonicParsing="false" onAction="#createFIRScene" prefHeight="25.0" prefWidth="117.0" text="CreateFIR" />
             <Button layoutX="20.0" layoutY="147.0" mnemonicParsing="false" onAction="#policestation_btn" prefHeight="25.0" prefWidth="117.0" text="Police Stations" />
             <Button layoutX="20.0" layoutY="193.0" mnemonicParsing="false" onAction="#forum_btn" prefHeight="25.0" prefWidth="117.0" text="Forum " />
+            <Button layoutX="20.0" layoutY="239.0" mnemonicParsing="false" onAction="#post_btn" prefHeight="25.0" prefWidth="117.0" text="Post" />
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
   </items>

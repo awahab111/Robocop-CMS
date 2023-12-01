@@ -2,6 +2,8 @@ package CMS.FIR;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 import CMS.DBHandler.FIRHandler;
 
@@ -83,12 +85,20 @@ public class FIR {
     }
 
 
-    public void addFIR(Date sqlDate, Time time, String location, String description, String evidence, int crime_id, int user_id){
-        firHandler.insertFIR(sqlDate, time, location, description, evidence, crime_id, user_id);
+    public void addFIR(String location, String description, String evidence, String crime, int user_id){
+
+        CrimeDescription cd = new CrimeDescription();
+        int crime_id = cd.getCrimeDescription_ID(crime);
+
+        java.util.Date currentDate = new java.util.Date();
+        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String formattedDate = formatter.format(currentDate);
+        java.sql.Date sqlDate = java.sql.Date.valueOf(formattedDate);
+
+        // Create a time variable with the current time
+        java.sql.Time sqlTime = new java.sql.Time(currentDate.getTime());
+        firHandler.insertFIR(sqlDate, sqlTime, location, description, evidence, crime_id, user_id);
     }
 
-    // public void addFIR(Date sqlDate, String crime, String tfloc, String desc, String tfstat, String evidence2,int crime_id2) {
-        
-    // }
 }
 

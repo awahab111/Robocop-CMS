@@ -17,6 +17,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import CMS.User;
 import CMS.DBHandler.CrimeDescriptionHandler;
 import CMS.FIR.*;
 import java.io.BufferedReader;
@@ -42,6 +43,7 @@ public class CreateFIRController implements Initializable {
     @FXML
     private TextField tflocation;
 
+    User user;
 
 
     @FXML
@@ -51,45 +53,9 @@ public class CreateFIRController implements Initializable {
         String desc = ta_desc.getText();
         String evidence = ta_evidence.getText();
 
-        // Create a date variable with the current date
-        java.util.Date currentDate = new java.util.Date();
-
-        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        String formattedDate = formatter.format(currentDate);
-        java.sql.Date sqlDate = java.sql.Date.valueOf(formattedDate);
-
-        // Create a time variable with the current time
-        java.sql.Time sqlTime = new java.sql.Time(currentDate.getTime());
-
         FIR fir = new FIR();
-        
-        CrimeDescription cd = new CrimeDescription();
-        int crime_id = cd.getCrimeDescription_ID(crime);
 
-        int user_id = ReadUserID.readUserIdFromFile("user_id.txt");
-
-        fir.addFIR(sqlDate, sqlTime, tfloc, desc, evidence, crime_id, user_id);
-    }
-
-    public class ReadUserID {
-        public static void main(String[] args) {
-            String filePath = "user_id.txt";
-            int userId = readUserIdFromFile(filePath);
-            System.out.println("User ID: " + userId);
-        }
-
-        public static int readUserIdFromFile(String filePath) {
-            int userId = 0;
-            try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-                String line = reader.readLine();
-                if (line != null) {
-                    userId = Integer.parseInt(line.trim());
-                }
-            } catch (IOException e) {
-                System.out.println("Error reading from file: " + e.getMessage());
-            }
-            return userId;
-        }
+        fir.addFIR(tfloc, desc, evidence, crime, user.getUser_ID());
     }
 
 
@@ -122,6 +88,11 @@ public class CreateFIRController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+
+    public void setUser(User u) {
+        user = new User(u);
     }
 
 }
