@@ -3,6 +3,7 @@ package Scene;
 import java.io.IOException;
 
 import CMS.User;
+import CMS.DBHandler.UserLoginHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,7 +24,7 @@ public class RegisterController {
     @FXML
     private TextField username;
 
-    User user;
+    UserLoginHandler user = new UserLoginHandler();
 
     @FXML
     void LoginSceneSwitchbtn(ActionEvent event) throws IOException {
@@ -39,8 +40,7 @@ public class RegisterController {
         String newuser = username.getText();
         String newpass = password.getText();
         
-        User user = new User();
-        user.addUser(newuser, newpass);
+        user.insertUser(newuser, newpass);
         System.out.println("New user added");
     }
 

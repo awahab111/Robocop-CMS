@@ -43,7 +43,7 @@ public class CreateFIRController implements Initializable {
     @FXML
     private TextField tflocation;
 
-    User user;
+    User user = User.getInstance();
 
 
     @FXML
@@ -90,9 +90,5 @@ public class CreateFIRController implements Initializable {
         stage.show();
     }
 
-
-    public void setUser(User u) {
-        user = new User(u);
-    }
 
 }

@@ -65,7 +65,7 @@ public class Post {
     }
 
     public void createPost(String content, int userid){
-        
+        postHandler.createPost(content, userid);
     }
 }
 

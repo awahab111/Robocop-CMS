@@ -1,23 +1,28 @@
 package Scene;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import CMS.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class MainViewController {
+public class MainViewController implements Initializable  {
     
     private Stage stage;
     private Scene scene;
     private Parent root;
 
-    User user;
+    SharedData sharedData = SharedData.getInstance();
+
+    User user = User.getInstance();
 
     @FXML
     void createFIRScene(ActionEvent event) throws IOException {
@@ -26,8 +31,6 @@ public class MainViewController {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        CreateFIRController createFIRController = loader.getController();
-        createFIRController.setUser(user);
         stage.show();
     }
 
@@ -57,21 +60,12 @@ public class MainViewController {
         root = loader.load();
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
-
-        CreatePostController createPostController = loader.getController();
-        createPostController.setUser(user);
-
-
         stage.setScene(scene);
         stage.show();
     }
 
-    
-    public void setUser(User u) {
-        user = new User(u);
-
-        System.out.println("User set");
-        System.out.println(user.getUsername());
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
     }
 
 

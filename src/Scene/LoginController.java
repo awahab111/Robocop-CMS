@@ -27,7 +27,9 @@ public class LoginController {
     @FXML
     private TextField tfusername;
 
-    User u = new User();
+    User u = User.getInstance();
+
+    SharedData sharedData = SharedData.getInstance();
 
     @FXML
     public void LoginClicked(ActionEvent event) throws IOException {
@@ -35,20 +37,18 @@ public class LoginController {
         String password = tfpassword.getText();
         System.out.println("Username: " + tfusername.getText());
         System.out.println("Password: " + tfpassword.getText());
-        User u = new User();
+
         u.getUserID(username, password);
         if (u.getUser_ID() > 0) {
             // Create a file and insert the user_id into it
             FileWriter fileWriter = new FileWriter("user_id.txt");
             fileWriter.write(String.valueOf(u.getUser_ID()));
             fileWriter.close();
-
+            
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("MainView.fxml"));
             root = loader.load();
             scene = new Scene(root);
-            MainViewController main = loader.getController();
-            main.setUser(u);
             stage.setScene(scene);
             stage.show();
         }

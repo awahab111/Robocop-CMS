@@ -1,0 +1,6 @@
+Want to add another use case for the user
+1. view fir 
+2. view announcements. 
+Changes i should make:
+1. Make database singleton
+2. 

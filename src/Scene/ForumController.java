@@ -71,7 +71,11 @@ public class ForumController implements Initializable{
         VBox vbox = new VBox(); // Declare and initialize vbox
         vbox.setSpacing(10); // Set spacing between nodes
 
-        for (Post post : posts) {
+        int start = pageIndex * 5;
+        int end = Math.min(start + 5, posts.size());
+        for (int i = start; i < end; i++) {
+            Post post = posts.get(i);
+            
             GridPane gridPane = new GridPane(); // Create a new GridPane for each post
             gridPane.setHgap(10);
             gridPane.setVgap(1);
@@ -88,13 +92,16 @@ public class ForumController implements Initializable{
 
 
             Label contentLabel = new Label(post.getContent());
+            contentLabel.setWrapText(true);
+            contentLabel.maxWidthProperty().bind(dapane.widthProperty().subtract(30)); 
             GridPane.setConstraints(contentLabel, 0, 1, 2, 1); // Place at bottom, spanning 2 columns
 
             gridPane.getChildren().addAll(userIdLabel, dateTimeLabel, contentLabel);
             gridPane.setStyle("-fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 10;");
-            gridPane.prefWidthProperty().bind(dapane.widthProperty().subtract(2));
+            gridPane.prefWidthProperty().bind(dapane.widthProperty().subtract(15));
 
             vbox.getChildren().add(gridPane);
+            
         }
 
         return new ScrollPane(vbox); // Return the vbox inside a ScrollPane for each page

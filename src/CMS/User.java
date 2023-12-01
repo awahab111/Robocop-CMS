@@ -3,16 +3,25 @@ package CMS;
 import CMS.DBHandler.UserLoginHandler;
 
 public class User {
+    private static User instance = null;
+
     int user_ID;
     String username;
     String password;
 
     UserLoginHandler userLoginHandler = new UserLoginHandler();
 
-    public User() {
+    public static User getInstance() {
+        if (instance == null) {
+            instance = new User();
+        }
+        return instance;
     }
 
-    public User(User u) {
+    private User() {
+    }
+
+    private User(User u) {
         this.user_ID = u.getUser_ID();
         this.username = u.getUsername();
         this.password = u.getPassword();
@@ -55,5 +64,11 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void setUser(User u) {
+        this.user_ID = u.getUser_ID();
+        this.username = u.getUsername();
+        this.password = u.getPassword();
     }
 }

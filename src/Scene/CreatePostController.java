@@ -3,6 +3,7 @@ package Scene;
 import java.io.IOException;
 
 import CMS.User;
+import CMS.Forum.Post;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,14 +19,16 @@ public class CreatePostController {
     private Scene scene;
     private Parent root;
 
-    User user;
+    User user = User.getInstance();
 
     @FXML
     private TextArea post_description;
 
     @FXML
     void OK_btn(ActionEvent event) {
-        
+        String desc = post_description.getText();
+        Post post = new Post();
+        post.createPost(desc, user.getUser_ID());
     }
 
    @FXML
@@ -53,10 +56,6 @@ public class CreatePostController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-    }
-
-    public void setUser(User u) {
-        user  =new User(u);
     }
 
 }
