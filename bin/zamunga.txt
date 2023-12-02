@@ -1,6 +1,11 @@
-Want to add another use case for the user
-1. view fir 
-2. view announcements. 
+Use Cases for Police:
+1. View Assigned FIR -> view fir _done_ 
+2. Update FIR -> create fir _done_
+    Investigation report
+    Status
+3. View Criminal records -> view fir _done_
+4. Add Criminal record -> create fir 
+5. Add Notification -> use post _done_
 Changes i should make:
 1. Make database singleton
-2. 
+2. styling

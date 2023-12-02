@@ -21,6 +21,19 @@ public class FIRHandler {
         }
         
     }
+
+    public void updateFIR(int FIR_id, String investi_report) {
+        String query = "update fir set investigation_report = '"+ investi_report +"' where FIR_id = "+ FIR_id +" ";
+        Database db = new Database();
+        java.sql.Connection conn = db.getconn();
+        try{
+            Statement coStatement = conn.createStatement();
+            coStatement.executeUpdate(query);
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+    }
+
     public ArrayList<Integer> getFIRs(int user_id) {
         ArrayList<Integer> firList = new ArrayList<Integer>();
         String query = "SELECT * FROM FIR where user_id = "+ user_id +" " ;
@@ -55,10 +68,32 @@ public class FIRHandler {
                 fir.setEvidence(rs.getString("evidence"));
                 fir.setCrime_desc(rs.getString("crime_type"));
                 fir.setStatus(rs.getBoolean("assigned_status"));
+                fir.setReport(rs.getString("investigation_report"));
             }
         }catch(SQLException e){
             System.out.println(e);
         }
         return fir;
+    }
+
+    public ArrayList<Integer> getAssignedFIRs(int officer_id) {
+        ArrayList<Integer> firList = new ArrayList<Integer>();
+        System.out.println(officer_id);
+        String query = "SELECT * FROM FIR where officer_id = "+ officer_id +" " ;
+        Database db = new Database();
+        java.sql.Connection conn = db.getconn();
+        try{
+            Statement coStatement = conn.createStatement();
+            java.sql.ResultSet rs = coStatement.executeQuery(query);
+            while(rs.next()){
+                firList.add(rs.getInt("FIR_id"));
+            }
+        }catch(SQLException e){
+            System.out.println(e);
+        }
+
+        
+
+        return firList;
     }
 }

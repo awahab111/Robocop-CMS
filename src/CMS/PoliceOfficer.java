@@ -54,8 +54,8 @@ public class PoliceOfficer {
         this.rank = rank;
     }
 
-    public void login(int badgeNumber, String password){
-        System.out.println("Badge Number: " + badgeNumber);
+    public int login(int badgeNumber, String password){
+        return handler.getPoliceOfficer(badgeNumber, password);
     }
 
 

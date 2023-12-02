@@ -8,19 +8,19 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.2508361204013378" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scene.MainViewController">
+<SplitPane dividerPositions="0.2508361204013378" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scene.PoliceScene.PoliceViewController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
-            <Button layoutX="20.0" layoutY="99.0" mnemonicParsing="false" onAction="#createFIRScene" prefHeight="25.0" prefWidth="117.0" text="Update FIR" />
-            <Button layoutX="20.0" layoutY="147.0" mnemonicParsing="false" onAction="#policestation_btn" prefHeight="25.0" prefWidth="117.0" text="Police Stations" />
-            <Button layoutX="20.0" layoutY="193.0" mnemonicParsing="false" onAction="#forum_btn" prefHeight="25.0" prefWidth="117.0" text="Forum " />
-            <Button layoutX="20.0" layoutY="239.0" mnemonicParsing="false" onAction="#post_btn" prefHeight="25.0" prefWidth="117.0" text="Post" />
+            <Button layoutX="1.0" layoutY="99.0" mnemonicParsing="false" onAction="#updateFIRbtn" prefHeight="25.0" prefWidth="157.0" text="Update FIR" />
+            <Button layoutY="147.0" mnemonicParsing="false" onAction="#ViewCriminalRecordsbtn" prefHeight="25.0" prefWidth="157.0" text="View Criminal Records" />
+            <Button layoutY="193.0" mnemonicParsing="false" onAction="#AddCriminalRecord_btn" prefHeight="25.0" prefWidth="157.0" text="Add Criminal Record " />
+            <Button layoutY="239.0" mnemonicParsing="false" onAction="#AddNotificationbtn" prefHeight="25.0" prefWidth="157.0" text="Add Notification" />
             <Button layoutX="43.0" layoutY="378.0" mnemonicParsing="false" onAction="#logoutbtnclicked" style="-fx-background-color: red; -fx-font-style: bold;" text="&lt; Log out" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <Button layoutX="20.0" layoutY="56.0" mnemonicParsing="false" onAction="#ViewFIR_btn" prefHeight="25.0" prefWidth="117.0" text="Assigned FIR" />
+            <Button layoutY="56.0" mnemonicParsing="false" onAction="#AssignedFIRbtn" prefHeight="25.0" prefWidth="157.0" text="Assigned FIR" />
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>

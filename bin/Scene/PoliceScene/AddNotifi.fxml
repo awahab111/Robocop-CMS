@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<SplitPane dividerPositions="0.2508361204013378" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scene.PoliceScene.AddNotifiController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <Button layoutX="1.0" layoutY="99.0" mnemonicParsing="false" onAction="#updateFIRbtn" prefHeight="25.0" prefWidth="157.0" text="Update FIR" />
+            <Button layoutY="147.0" mnemonicParsing="false" onAction="#ViewCriminalRecordsbtn" prefHeight="25.0" prefWidth="157.0" text="View Criminal Records" />
+            <Button layoutY="193.0" mnemonicParsing="false" onAction="#AddCriminalRecord_btn" prefHeight="25.0" prefWidth="157.0" text="Add Criminal Record " />
+            <Button layoutY="239.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="157.0" text="Add Notification" />
+            <Button layoutX="43.0" layoutY="378.0" mnemonicParsing="false" onAction="#backbtnclicked" style="-fx-background-color: red; -fx-font-style: bold;" text="&lt; Back" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button layoutY="56.0" mnemonicParsing="false" onAction="#AssignedFIRbtn" prefHeight="25.0" prefWidth="157.0" text="Assigned FIR" />
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <TextArea fx:id="anon_description" layoutX="13.0" layoutY="183.0" prefHeight="170.0" prefWidth="452.0" />
+            <Text layoutX="15.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Announcement Descrition">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+            <Button layoutX="179.0" layoutY="399.0" mnemonicParsing="false" onAction="#OK_btn" prefHeight="25.0" prefWidth="117.0" text="OK" />
+            <ChoiceBox fx:id="notif_type" layoutX="179.0" layoutY="98.0" prefHeight="25.0" prefWidth="282.0" />
+            <Text layoutX="15.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Announcement Type">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Text>
+            <Text layoutX="128.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Announcement Type">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Separator layoutX="113.0" layoutY="53.0" prefWidth="250.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>

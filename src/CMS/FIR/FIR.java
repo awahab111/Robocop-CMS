@@ -18,6 +18,15 @@ public class FIR {
     private String evidence;
     private int crime_id;
     private String crime_desc;
+    private String report;
+
+    public String getReport() {
+        return report;
+    }
+
+    public void setReport(String report) {
+        this.report = report;
+    }
 
     public String getCrime_desc() {
         return crime_desc;

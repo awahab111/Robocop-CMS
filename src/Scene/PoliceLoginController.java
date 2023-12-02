@@ -34,20 +34,16 @@ public class PoliceLoginController {
         System.out.println("Badge Number: " + tfbadgenumber.getText());
         System.out.println("Password: " + tfpassword.getText());
 
-        if (badgenumber.isEmpty() || password.isEmpty()) {
-            
-        }
-        else{
-
-            root = FXMLLoader.load(getClass().getResource("PoliceView.fxml"));
+        pawlice.login(Integer.parseInt(badgenumber), password);
+        
+    
+        if (pawlice.getOfficerID() >= 0) {
+            root = FXMLLoader.load(getClass().getResource("PoliceScene/PoliceView.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         }
-
-
-        // pawlice.login(Integer.parseInt(badgenumber), password);
 
     }
 

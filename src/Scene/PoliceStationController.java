@@ -17,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.scene.web.HTMLEditor;;
 
 public class PoliceStationController implements Initializable {
     private Stage stage;
