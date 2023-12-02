@@ -67,4 +67,14 @@ public class CreatePostController {
         stage.show();
     }
 
+    @FXML
+    void ViewFIR_btn(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ViewFIR.fxml"));
+        root =  loader.load();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }

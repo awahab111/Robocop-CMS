@@ -38,6 +38,16 @@ public class ForumController implements Initializable{
     private Pane dapane;
 
     @FXML
+    void ViewFIR_btn(ActionEvent event) throws IOException{
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ViewFIR.fxml"));
+        root =  loader.load();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
     void createFIRScene(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("CreateFIR.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -109,7 +119,7 @@ public class ForumController implements Initializable{
             GridPane.setConstraints(contentLabel, 0, 1, 2, 1); // Place at bottom, spanning 2 columns
 
             gridPane.getChildren().addAll(userIdLabel, dateTimeLabel, contentLabel);
-            gridPane.setStyle("-fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 10;");
+            gridPane.setStyle("-fx-background-color: #E8E8E8; -fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 10;");
             gridPane.prefWidthProperty().bind(dapane.widthProperty().subtract(15));
 
             vbox.getChildren().add(gridPane);

@@ -10,7 +10,7 @@ public class App extends Application {
     public void start(Stage primaryStage) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("Scene/PoliceLogin.fxml"));
+            root = FXMLLoader.load(getClass().getResource("Scene/Login.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setTitle("Hello World!");
             primaryStage.setScene(scene);

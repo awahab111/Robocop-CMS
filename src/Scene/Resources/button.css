@@ -1,0 +1,70 @@
+#BUTTON{
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-font-weight: bold; 
+    -fx-border-color: rgb(48, 161, 236);
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+#BUTTON:hover{     
+    -fx-background-color: rgb(48, 161, 236);
+    -fx-text-fill: white;
+    -fx-font-weight: bold; 
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+#REG{
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-font-weight: bold; 
+    -fx-border-color: rgb(219, 94, 63);
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+
+#REG:hover{     
+    -fx-background-color: rgb(219, 94, 63);
+    -fx-text-fill: white;
+    -fx-font-weight: bold; 
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+#LOGIN {
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: black;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+#LOGIN:focused {
+    -fx-border-width: 0 0 2 0;
+}
+
+#menu{
+    -fx-background-color: #495464;
+    -fx-text-fill: white;
+    -fx-font-weight: bold; 
+}
+
+#menu:hover{     
+    -fx-background-color: #BBBFCA;
+    -fx-text-fill: black;
+    -fx-font-weight: bold; 
+}
+
+.choice-box {
+    -fx-background-color: #D0D0D0;
+    -fx-font-weight: bold;
+}
+
+.choice-box .list-cell {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+
+.choice-box .list-cell:filled:hover {
+    -fx-background-color: #F0F0F0;
+}
