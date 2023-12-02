@@ -11,8 +11,15 @@
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
-            <Button layoutX="20.0" layoutY="99.0" mnemonicParsing="false" onAction="#createFIRScene" prefHeight="25.0" prefWidth="117.0" text="CreateFIR" />
+           <Button layoutX="20.0" layoutY="99.0" mnemonicParsing="false" onAction="#createFIRScene" prefHeight="25.0" prefWidth="117.0" text="CreateFIR" />
             <Button layoutX="20.0" layoutY="147.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="117.0" text="Police Stations" />
+            <Button layoutX="20.0" layoutY="193.0" mnemonicParsing="false" onAction="#forum_btn" prefHeight="25.0" prefWidth="117.0" text="Forum " />
+            <Button layoutX="20.0" layoutY="239.0" mnemonicParsing="false" onAction="#post_btn" prefHeight="25.0" prefWidth="117.0" text="Post" />
+            <Button layoutX="51.0" layoutY="377.0" mnemonicParsing="false" onAction="#backbtnclicked" style="-fx-background-color: red; -fx-font-style: bold;" text="&lt; Back" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
@@ -40,11 +47,6 @@
             <Text fx:id="txtname" layoutX="133.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="209.0" />
             <Text fx:id="txtloc" layoutX="133.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="209.0" />
             <Text fx:id="txtNumber" layoutX="133.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="209.0" />
-            <Button mnemonicParsing="false" onAction="#backbtnclicked" style="-fx-background-color: red; -fx-font-style: bold;" text="&lt; Back" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
          </children></AnchorPane>
   </items>
 </SplitPane>

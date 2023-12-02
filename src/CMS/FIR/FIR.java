@@ -14,10 +14,18 @@ public class FIR {
     private String time;
     private String location;
     private String description;
-    private String status;
+    private Boolean status;
     private String evidence;
     private int crime_id;
+    private String crime_desc;
 
+    public String getCrime_desc() {
+        return crime_desc;
+    }
+
+    public void setCrime_desc(String crime_desc) {
+        this.crime_desc = crime_desc;
+    }
     FIRHandler firHandler = new FIRHandler();
 
     public int getFIR_ID() {
@@ -60,11 +68,11 @@ public class FIR {
         this.description = description;
     }
 
-    public String getStatus() {
+    public Boolean getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Boolean status) {
         this.status = status;
     }
 

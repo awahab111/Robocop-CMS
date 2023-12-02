@@ -8,29 +8,34 @@
 
 <AnchorPane prefHeight="440.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scene.LoginController">
    <children>
-      <Text layoutX="223.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" textAlignment="CENTER">
+      <Text layoutX="223.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" textAlignment="CENTER">
          <font>
             <Font size="64.0" />
          </font>
       </Text>
-      <Text layoutX="66.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" textAlignment="CENTER" wrappingWidth="178.03125">
+      <Text layoutX="77.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" textAlignment="CENTER" wrappingWidth="178.03125">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <Text layoutX="74.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" textAlignment="CENTER" wrappingWidth="163.03125">
+      <Text layoutX="80.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" textAlignment="CENTER" wrappingWidth="163.03125">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="tfusername" layoutX="238.0" layoutY="180.0" prefHeight="26.0" prefWidth="280.0" promptText="Username" />
-      <TextField fx:id="tfpassword" layoutX="238.0" layoutY="235.0" prefHeight="26.0" prefWidth="280.0" promptText="Password" />
-      <Button layoutX="144.0" layoutY="340.0" mnemonicParsing="false" onAction="#LoginClicked" prefHeight="38.0" prefWidth="141.0" text="Login">
+      <TextField fx:id="tfusername" layoutX="256.0" layoutY="122.0" prefHeight="26.0" prefWidth="280.0" promptText="Username" />
+      <TextField fx:id="tfpassword" layoutX="244.0" layoutY="193.0" prefHeight="26.0" prefWidth="280.0" promptText="Password" />
+      <Button layoutX="243.0" layoutY="316.0" mnemonicParsing="false" onAction="#LoginClicked" prefHeight="38.0" prefWidth="141.0" text="Login">
          <font>
             <Font name="Arial" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="367.0" layoutY="340.0" mnemonicParsing="false" onAction="#Registerbtnclicked" prefHeight="38.0" prefWidth="141.0" text="Register">
+      <Button layoutX="449.0" layoutY="316.0" mnemonicParsing="false" onAction="#Registerbtnclicked" prefHeight="38.0" prefWidth="141.0" text="Register">
+         <font>
+            <Font name="Arial" size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="14.0" layoutY="316.0" mnemonicParsing="false" onAction="#PoliceLogin" prefHeight="38.0" prefWidth="141.0" text="Police Login">
          <font>
             <Font name="Arial" size="20.0" />
          </font>

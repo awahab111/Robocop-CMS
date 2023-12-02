@@ -13,7 +13,7 @@ public class ForumHandler {
         try {
             java.sql.Connection conn = db.getconn();
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from post inner join user_login on post.user_id = user_login.userid order by pub_time desc");
+            ResultSet rs = stmt.executeQuery("select * from post inner join user_login on post.user_id = user_login.userid order by pub_date desc, pub_time desc");
 
             while (rs.next()) {
                 Post post = new Post();

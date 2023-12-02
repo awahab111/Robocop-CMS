@@ -74,4 +74,26 @@ public class PoliceStationController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+
+    @FXML
+    void forum_btn(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("Forum.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void post_btn(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("CreatePost.fxml"));
+        loader.setClassLoader(getClass().getClassLoader());
+        root = loader.load();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }

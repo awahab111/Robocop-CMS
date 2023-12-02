@@ -13,8 +13,14 @@
    <items>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
-            <Button layoutX="20.0" layoutY="99.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="117.0" text="CreateFIR" />
+             <Button layoutX="20.0" layoutY="99.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="117.0" text="CreateFIR" />
             <Button layoutX="20.0" layoutY="147.0" mnemonicParsing="false" onAction="#policestation_btn" prefHeight="25.0" prefWidth="117.0" text="Police Stations" />
+            <Button layoutX="20.0" layoutY="193.0" mnemonicParsing="false" onAction="#forum_btn" prefHeight="25.0" prefWidth="117.0" text="Forum " />
+            <Button layoutX="20.0" layoutY="239.0" mnemonicParsing="false" onAction="#post_btn" prefHeight="25.0" prefWidth="117.0" text="Post" />
+            <Button layoutX="51.0" layoutY="377.0" mnemonicParsing="false" onAction="#backbtnclicked" style="-fx-background-color: red; -fx-font-style: bold;" text="&lt; Back" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
          </children>
       </AnchorPane>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
@@ -28,11 +34,6 @@
             <TextField fx:id="tflocation" layoutX="37.0" layoutY="256.0" prefHeight="25.0" prefWidth="192.0" />
             <Text layoutX="255.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Crime Description" textAlignment="CENTER" wrappingWidth="97.56249618530273" />
             <ChoiceBox fx:id="crime_choice" layoutX="254.0" layoutY="256.0" prefHeight="25.0" prefWidth="192.0" />
-            <Button mnemonicParsing="false" onAction="#backbtnclicked" style="-fx-background-color: red; -fx-font-style: bold;" text="&lt; Back" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Button>
             <Text layoutX="201.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create a FIR">
                <font>
                   <Font size="14.0" />

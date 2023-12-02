@@ -63,4 +63,14 @@ public class LoginController {
         stage.setScene(scene);
         stage.show();
     }
+
+    
+    @FXML
+    void PoliceLogin(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("PoliceLogin.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }

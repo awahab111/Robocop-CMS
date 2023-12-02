@@ -55,6 +55,18 @@ public class ForumController implements Initializable{
         stage.show();
     }
 
+    @FXML
+    void post_btn(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("CreatePost.fxml"));
+        loader.setClassLoader(getClass().getClassLoader());
+        root = loader.load();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -112,4 +124,15 @@ public class ForumController implements Initializable{
         pagination.prefHeightProperty().bind(dapane.heightProperty());
 
     }
+
+    
+    @FXML
+    void backbtnclicked(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("MainView.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }
