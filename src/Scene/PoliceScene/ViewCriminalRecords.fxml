@@ -4,28 +4,35 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.2508361204013378" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scene.PoliceScene.ViewCriminalRecordsController">
+<SplitPane dividerPositions="0.26" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Scene.PoliceScene.ViewCriminalRecordsController">
   <items>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #495464;">
          <children>
-             <Button layoutX="1.0" layoutY="99.0" mnemonicParsing="false" onAction="#updateFIRbtn" prefHeight="25.0" prefWidth="157.0" text="Update FIR" />
-            <Button layoutY="147.0" mnemonicParsing="false" onAction="#ViewCriminalRecordsbtn" prefHeight="25.0" prefWidth="157.0" text="View Criminal Records" />
-            <Button layoutY="193.0" mnemonicParsing="false" onAction="#AddCriminalRecord_btn" prefHeight="25.0" prefWidth="157.0" text="Add Criminal Record " />
-            <Button layoutY="239.0" mnemonicParsing="false" onAction="#AddNotificationbtn" prefHeight="25.0" prefWidth="157.0" text="Add Notification" />
-            <Button layoutX="43.0" layoutY="378.0" mnemonicParsing="false" onAction="#backbtnclicked" style="-fx-background-color: red; -fx-font-style: bold;" text="&lt; Back" textAlignment="CENTER">
+            <Button id="menu" layoutX="3.0" layoutY="160.0" mnemonicParsing="false" onAction="#updateFIRbtn" prefHeight="25.0" prefWidth="159.0" stylesheets="@../Resources/button.css" text="Update FIR" />
+            <Button id="menu" layoutX="3.0" layoutY="190.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="159.0" stylesheets="@../Resources/button.css" text="View Criminal Records" />
+            <Button id="menu" layoutX="3.0" layoutY="220.0" mnemonicParsing="false" onAction="#AddCriminalRecord_btn" prefHeight="25.0" prefWidth="159.0" stylesheets="@../Resources/button.css" text="Add Criminal Record " />
+            <Button id="menu" layoutX="3.0" layoutY="250.0" mnemonicParsing="false" onAction="#AddNotificationbtn" prefHeight="25.0" prefWidth="159.0" stylesheets="@../Resources/button.css" text="Add Notification" />
+            <Button id="REG" layoutX="5.0" layoutY="437.0" mnemonicParsing="false" onAction="#backbtnclicked" prefHeight="24.0" prefWidth="154.0" stylesheets="@../Resources/button.css" text="&lt; Back" textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-                     <Button layoutY="56.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="157.0" text="Assigned FIR" />
+            <Button id="menu" layoutX="3.0" layoutY="130.0" mnemonicParsing="false" onAction="#AssignedFIRbtn" prefHeight="25.0" prefWidth="159.0" stylesheets="@../Resources/button.css" text="Assigned FIR" />
+            <ImageView fitHeight="54.0" fitWidth="155.0" layoutX="11.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Resources/robocop_PNG46.png" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
-            <Pane fx:id="viewpane" layoutX="13.0" layoutY="72.0" prefHeight="354.0" prefWidth="446.0">
+            <Pane fx:id="viewpane" layoutX="22.0" layoutY="107.0" prefHeight="308.0" prefWidth="433.0" style="-fx-background-color: #BBBFCA; -fx-background-radius: 10;">
                <children>
                   <Label layoutX="14.0" layoutY="95.0" prefHeight="17.0" prefWidth="69.0" text="Name:">
                      <font>
@@ -42,7 +49,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font></Label>
                   <Label fx:id="birthplace" layoutX="79.0" layoutY="135.0" prefHeight="17.0" prefWidth="100.0" />
-                  <Button layoutX="207.5" layoutY="305.0" mnemonicParsing="false" onAction="#backRecordview" style="-fx-background-color: red; -fx-font-style: bold;" text="&lt; Back" textAlignment="CENTER">
+                  <Button id="menu" layoutX="14.0" layoutY="265.0" mnemonicParsing="false" onAction="#backRecordview" prefHeight="25.0" prefWidth="408.0" stylesheets="@../Resources/button.css" text="Back" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -53,8 +60,7 @@
                      </font>
                   </Label>
                   <Label fx:id="fathername" layoutX="99.0" layoutY="175.0" prefHeight="17.0" prefWidth="100.0" />
-                  <Label fx:id="history" alignment="TOP_LEFT" layoutX="240.0" layoutY="55.0" prefHeight="159.0" prefWidth="194.0" wrapText="true" />
-                  <Label layoutX="240.0" layoutY="40.0" prefHeight="17.0" prefWidth="88.0" text="Crime History">
+                  <Label layoutX="217.0" layoutY="40.0" prefHeight="17.0" prefWidth="88.0" text="Crime History">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font></Label>
@@ -64,15 +70,20 @@
                      </font>
                   </Label>
                   <Label fx:id="address" layoutX="69.0" layoutY="215.0" prefHeight="17.0" prefWidth="150.0" />
+                  <Label fx:id="history" alignment="TOP_LEFT" layoutX="217.0" layoutY="58.0" prefHeight="175.0" prefWidth="194.0" style="-fx-border-width: 0.5; -fx-border-color: #495464; -fx-border-radius: 10;" wrapText="true" />
                </children>
             </Pane>
-            <Pane fx:id="dapane" layoutX="88.0" layoutY="49.0" prefHeight="400.0" prefWidth="300.0" />
-            <Text layoutX="141.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Criminal Record" wrappingWidth="194.0">
-               <font>
-                  <Font name="System Bold" size="24.0" />
-               </font>
-            </Text>
-            <Separator layoutX="138.0" layoutY="45.0" prefWidth="200.0" />
+            <Pane fx:id="dapane" layoutX="88.0" layoutY="90.0" prefHeight="354.0" prefWidth="300.0" />
+            <Pane layoutX="-6.0" layoutY="-9.0" prefHeight="71.0" prefWidth="490.0" style="-fx-background-color: #E8E8E8;">
+               <children>
+                  <Text layoutX="148.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Criminal Record" wrappingWidth="194.0">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Text>
+                  <Separator layoutX="145.0" layoutY="66.0" prefWidth="200.0" />
+               </children>
+            </Pane>
          </children></AnchorPane>
   </items>
 </SplitPane>

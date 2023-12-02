@@ -150,9 +150,6 @@ public class ViewCriminalRecordsController implements Initializable {
         for (int i = start; i < end; i++) {
             GridPane gridPane = new GridPane(); // Create a new GridPane for each post
 
-            // gridPane.setStyle("-fx-border-color: black;");
-            // vbox.setStyle("-fx-border-color: black;");
-
             gridPane.prefWidthProperty().bind(pagination.widthProperty());
 
             Button button = new Button("Criminal "+ allcriminalList.get(i).getCriminal_id() +" Details >");
@@ -185,8 +182,8 @@ public class ViewCriminalRecordsController implements Initializable {
 
             button.setStyle("-fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 10; -fx-background-color: white; -fx-text-fill: black;");
 
-            button.setOnMouseEntered(e -> button.setStyle("-fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 10; -fx-background-color: rgb(0, 159,228); -fx-text-fill: white;"));
-            button.setOnMouseExited(e -> button.setStyle("-fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 10; -fx-background-color: white; -fx-text-fill: black;"));
+            button.setOnMouseEntered(e -> button.setStyle("-fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 10; -fx-background-color: #BBBFCA; -fx-text-fill: black;"));
+            button.setOnMouseExited(e -> button.setStyle("-fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10; -fx-padding: 10; -fx-background-color: #E8E8E8; -fx-text-fill: black;"));
            
             vbox.getChildren().add(gridPane);
             
@@ -216,7 +213,6 @@ public class ViewCriminalRecordsController implements Initializable {
         }
         System.out.println(historyString);
         history.setText(historyString);
-        history.setStyle("-fx-border-color: black;");    
 
     }
 

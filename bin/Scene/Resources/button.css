@@ -55,6 +55,13 @@
     -fx-font-weight: bold; 
 }
 
+/* --------------------------------- */
+
+
+
+/* ------------choice-box----------- */
+
+
 .choice-box {
     -fx-background-color: #D0D0D0;
     -fx-font-weight: bold;
@@ -67,4 +74,42 @@
 
 .choice-box .list-cell:filled:hover {
     -fx-background-color: #F0F0F0;
+}
+
+
+
+/* ------------HTML EDITOR------------- */
+
+.html-editor .top-toolbar {
+    -fx-background-color: #495464;
+    -fx-padding: 3px;
+}
+
+.html-editor .bottom-toolbar {
+    -fx-background-color: #495464;
+    -fx-padding: 3px;
+}
+
+.html-editor .web-view {
+    -fx-background-color: #495464;
+}
+
+.html-editor {
+    -fx-background-color: #495464;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.radio-button {
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+.radio-button .dot {
+    -fx-background-color: white;
+    -fx-radius: 5;
+}
+
+.radio-button:selected .dot {
+    -fx-background-color: black;
 }
