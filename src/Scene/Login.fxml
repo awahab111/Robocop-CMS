@@ -28,6 +28,11 @@
                </font>
             </Text>
             <PasswordField id="LOGIN" fx:id="tfpassword" layoutX="40.0" layoutY="185.0" prefHeight="25.0" prefWidth="211.0" promptText="Type your password" stylesheets="@Resources/button.css" />
+            <Text fx:id="nhihai" fill="#e83b3b" layoutX="40.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="211.0">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
       <Text layoutX="125.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" textAlignment="CENTER">

@@ -8,8 +8,11 @@ import CMS.Forum.Post;
 
 public class ForumHandler {
     public List<Post> getAllPosts() {
+
+        Database db = Database.getInstance();
+
+
         List<Post> posts = new ArrayList<>();
-        Database db = new Database();
         try {
             java.sql.Connection conn = db.getconn();
             Statement stmt = conn.createStatement();

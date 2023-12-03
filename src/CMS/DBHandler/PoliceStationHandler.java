@@ -8,9 +8,11 @@ import java.util.ArrayList;
 import CMS.PoliceStation;
 
 public class PoliceStationHandler {
+    Database db = Database.getInstance();
+
+
     public void insertPoliceStation(int station_id, String name, String location, String phone) {
         String query = "INSERT INTO POLICE_STATION (station_id, location, station_name, contact_number) VALUES (" + station_id + ", '" + location + "', '" + name + "', '" + phone + "')";
-        Database db = new Database();
         java.sql.Connection conn = db.getconn();
         try{
             Statement coStatement = conn.createStatement();
@@ -22,7 +24,6 @@ public class PoliceStationHandler {
 
     public ArrayList<String> getPoliceStation() throws SQLException {
         // Connect to the database
-        Database db = new Database();
         java.sql.Connection conn = db.getconn();
         Statement statement = conn.createStatement();
 
@@ -43,7 +44,6 @@ public class PoliceStationHandler {
     public PoliceStation getPoliceStationDetails(String policeStationName) {
         PoliceStation policeStation = null;
         String query = "SELECT * FROM POLICE_STATION WHERE station_name = '" + policeStationName + "'";
-        Database db = new Database();
         java.sql.Connection conn = db.getconn();
         try {
             Statement statement = conn.createStatement();

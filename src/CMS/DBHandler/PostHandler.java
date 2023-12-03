@@ -5,9 +5,9 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 public class PostHandler {
-    public void createPost(String content, int user_id) {
+    Database db = Database.getInstance();
 
-        Database db = new Database();
+    public void createPost(String content, int user_id) {
         
         java.util.Date currentDate = new java.util.Date();
         DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");

@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -21,6 +22,9 @@ public class LoginController {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    
+    @FXML
+    private Text nhihai;
     
     @FXML
     private PasswordField tfpassword;
@@ -36,6 +40,11 @@ public class LoginController {
     public void LoginClicked(ActionEvent event) throws IOException {
         String username = tfusername.getText();
         String password = tfpassword.getText();
+
+        if (username.length() == 0 || password.length() == 0) {
+            nhihai.setText("Username or password cannot be empty");
+            return;
+        }
         System.out.println("Username: " + tfusername.getText());
         System.out.println("Password: " + tfpassword.getText());
 
@@ -47,11 +56,14 @@ public class LoginController {
             fileWriter.close();
             
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Resources/UserScene/MainView.fxml"));
             root = loader.load();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+        }
+        else {
+            nhihai.setText("Invalid username or password");
         }
 
     }

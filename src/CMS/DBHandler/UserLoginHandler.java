@@ -5,8 +5,21 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class UserLoginHandler {
+    Database db = Database.getInstance();
+
+    public boolean checkUser(String username){
+        java.sql.Connection conn = db.getconn();
+        String stat = "select * from user_login where username = '" + username + "' ";
+        try{
+            Statement coStatement = conn.createStatement();
+            ResultSet resultSet = coStatement.executeQuery(stat);
+            return resultSet.next();
+        }catch(SQLException e){
+            return false;
+        }
+    }
+
     public int getUserID(String username, String password){
-        Database db = new Database();
         java.sql.Connection conn = db.getconn();
         String stat = "select userid from user_login where username = '" + username + "' AND password = '" + password + "'";
         try{
@@ -20,7 +33,6 @@ public class UserLoginHandler {
     }
 
     public void insertUser(String username, String password){
-        Database db = new Database();
         java.sql.Connection conn = db.getconn();
         String stat = "insert into user_login (username, password) values ('" + username + "', '" + password + "')";
         try{

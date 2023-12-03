@@ -9,9 +9,11 @@ import java.util.ArrayList;
 import CMS.FIR.FIR;
 
 public class FIRHandler {
+
+    Database db = Database.getInstance();
+
     public void insertFIR(Date sqlDate, Time time, String location, String description, String evidence, int crimeDescId , int user_id) {
         String query = "INSERT INTO FIR (pub_date, pub_time, location, description, evidence, crime_desc_id, user_id) VALUES ('" + sqlDate + "', '" + time + "', '" + location + "', '" + description + "', '" + evidence + "', " + crimeDescId + ", " + user_id + ")";
-        Database db = new Database();
         java.sql.Connection conn = db.getconn();
         try{
             Statement coStatement = conn.createStatement();
@@ -24,7 +26,6 @@ public class FIRHandler {
 
     public void updateFIR(int FIR_id, String investi_report) {
         String query = "update fir set investigation_report = '"+ investi_report +"' where FIR_id = "+ FIR_id +" ";
-        Database db = new Database();
         java.sql.Connection conn = db.getconn();
         try{
             Statement coStatement = conn.createStatement();
@@ -37,7 +38,6 @@ public class FIRHandler {
     public ArrayList<Integer> getFIRs(int user_id) {
         ArrayList<Integer> firList = new ArrayList<Integer>();
         String query = "SELECT * FROM FIR where user_id = "+ user_id +" " ;
-        Database db = new Database();
         java.sql.Connection conn = db.getconn();
         try{
             Statement coStatement = conn.createStatement();
@@ -54,7 +54,6 @@ public class FIRHandler {
     public FIR getFIR(int FIR_id) {
         FIR fir = new FIR();
         String query = "select * from fir inner join crime_desc on crime_desc.crime_id = fir.crime_desc_id where FIR_id = "+ FIR_id +" " ;
-        Database db = new Database();
         java.sql.Connection conn = db.getconn();
         try{
             Statement coStatement = conn.createStatement();
@@ -80,7 +79,6 @@ public class FIRHandler {
         ArrayList<Integer> firList = new ArrayList<Integer>();
         System.out.println(officer_id);
         String query = "SELECT * FROM FIR where officer_id = "+ officer_id +" " ;
-        Database db = new Database();
         java.sql.Connection conn = db.getconn();
         try{
             Statement coStatement = conn.createStatement();

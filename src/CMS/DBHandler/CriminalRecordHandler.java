@@ -7,9 +7,11 @@ import java.util.ArrayList;
 import CMS.CriminalRecord;
 
 public class CriminalRecordHandler {
+    Database db = Database.getInstance();
+
+
     public void insertRecord(String name, String fatherName, String birthplace, String address, String cnic, ArrayList<String> crimes){
         String query = "INSERT INTO criminal_record (name, father_name, birthplace, address, cnic) VALUES ('" + name + "', '" + fatherName + "', '" + birthplace + "', '" + address + "', '" + cnic + "')";
-        Database db = new Database();
         java.sql.Connection conn = db.getconn();
         try{
             Statement coStatement = conn.createStatement();
@@ -34,7 +36,6 @@ public class CriminalRecordHandler {
     public ArrayList<CriminalRecord> getAllRecords(){
         ArrayList<CriminalRecord> records = new ArrayList<CriminalRecord>();
         String query = "SELECT * FROM criminal_record";
-        Database db = new Database();
         java.sql.Connection conn = db.getconn();
         try{
             Statement coStatement = conn.createStatement();
@@ -59,7 +60,6 @@ public class CriminalRecordHandler {
     public CriminalRecord getRecord(int criminal_id){
         CriminalRecord record = new CriminalRecord();
         String query = "SELECT * FROM criminal_record WHERE criminal_id = '" + criminal_id + "'";
-        Database db = new Database();
         java.sql.Connection conn = db.getconn();
         try{
             Statement coStatement = conn.createStatement();
@@ -82,7 +82,6 @@ public class CriminalRecordHandler {
     public ArrayList<String> getCrimeHistory(int criminal_id){
         ArrayList<String> crimes = new ArrayList<String>();
         String query = "SELECT * FROM criminal_history WHERE criminal_id = '" + criminal_id + "'";
-        Database db = new Database();
         java.sql.Connection conn = db.getconn();
         try{
             Statement coStatement = conn.createStatement();

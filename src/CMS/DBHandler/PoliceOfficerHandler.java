@@ -5,9 +5,9 @@ import java.sql.*;
 import CMS.PoliceOfficer;
 
 public class PoliceOfficerHandler {
+    Database db = Database.getInstance();
 
     public int getPoliceOfficer(int badgeNumber, String password) {
-        Database db = new Database();
         java.sql.Connection conn = db.getconn();
         String stat = "select * from policeofficer where badgenumber = " + badgeNumber + " AND password = '" + password + "'";
         try {
@@ -30,6 +30,30 @@ public class PoliceOfficerHandler {
             System.err.println(e);
         }
         return -1;
-
     }
+
+    public void insertPoliceOfficer(int badgeNumber, String password, String rank) {
+        java.sql.Connection conn = db.getconn();
+        String stat = "insert into policeofficer (badgenumber, password, policeofficer.Rank) values (" + badgeNumber + ", '" + password + "', '" + rank + "' )";
+        try {
+            Statement coStatement = conn.createStatement();
+            coStatement.executeUpdate(stat);
+        } catch (SQLException e) {
+            System.err.println(e);
+        }
+    }
+
+    public boolean checkPoliceOfficer(int badgeNumber) {
+        java.sql.Connection conn = db.getconn();
+        String stat = "select * from policeofficer where badgenumber = " + badgeNumber;
+        try {
+            Statement coStatement = conn.createStatement();
+            ResultSet resultSet = coStatement.executeQuery(stat);
+            return resultSet.next();
+        } catch (SQLException e) {
+            System.err.println(e);
+            return false;
+        }
+    }
+
 }

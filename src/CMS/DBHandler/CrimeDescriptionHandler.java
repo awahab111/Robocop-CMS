@@ -4,8 +4,11 @@ import java.util.ArrayList;
 
 
 public class CrimeDescriptionHandler {
+    Database db = Database.getInstance();
+
     public int getCrimeID(String crimeDescription){
-        Database db = new Database();
+
+
         java.sql.Connection conn = db.getconn();
         String stat = "select crime_id from crime_desc where crime_type = '" + crimeDescription + "'";
         try{
@@ -19,7 +22,6 @@ public class CrimeDescriptionHandler {
     }
 
     public void insertCrime(String crimeDescription){
-        Database db = new Database();
         java.sql.Connection conn = db.getconn();
         String stat = "insert into crime_description (description) values ('" + crimeDescription + "')";
         try{
@@ -31,7 +33,6 @@ public class CrimeDescriptionHandler {
 
     public ArrayList<String> getCrimeDescription() throws SQLException {
         // Connect to the database
-        Database db = new Database();
         java.sql.Connection conn = db.getconn();
         Statement statement = conn.createStatement();
 

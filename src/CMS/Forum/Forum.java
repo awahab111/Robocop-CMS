@@ -5,10 +5,23 @@ import java.util.ArrayList;
 import CMS.DBHandler.ForumHandler;
 
 public class Forum {
+    private static Forum instance = null;
     private ArrayList<Post> posts;
     private int postCount;
 
     ForumHandler forumHandler = new ForumHandler();
+
+    public static Forum getInstance() {
+        if (instance == null) {
+            instance = new Forum();
+        }
+        return instance;
+    }
+
+    private Forum() {
+        posts = new ArrayList<Post>();
+        postCount = 0;
+    }
 
     public ArrayList<Post> getPosts() {
         return posts;
