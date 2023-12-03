@@ -1,6 +1,6 @@
 package CMS.FIR;
 
-import CMS.DBHandler.CrimeDescriptionHandler;
+import DBHandler.CrimeDescriptionHandler;
 
 public class CrimeDescription {
     private int crimeDescription_ID;

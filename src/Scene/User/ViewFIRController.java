@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import CMS.User;
-import CMS.DBHandler.FIRHandler;
-import CMS.DBHandler.ForumHandler;
 import CMS.FIR.FIR;
 import CMS.Forum.Post;
+import DBHandler.FIRHandler;
+import DBHandler.ForumHandler;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;

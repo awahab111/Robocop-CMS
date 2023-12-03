@@ -1,6 +1,6 @@
 package CMS;
 
-import CMS.DBHandler.UserLoginHandler;
+import DBHandler.UserLoginHandler;
 
 public class User {
     private static User instance = null;

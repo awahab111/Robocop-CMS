@@ -18,8 +18,9 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import CMS.User;
-import CMS.DBHandler.CrimeDescriptionHandler;
 import CMS.FIR.*;
+import DBHandler.CrimeDescriptionHandler;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;

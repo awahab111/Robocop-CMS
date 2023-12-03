@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import CMS.PoliceOfficer;
-import CMS.DBHandler.FIRHandler;
 import CMS.FIR.FIR;
+import DBHandler.FIRHandler;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;

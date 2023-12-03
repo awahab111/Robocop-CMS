@@ -1,6 +1,6 @@
 package CMS;
 
-import CMS.DBHandler.PoliceOfficerHandler;
+import DBHandler.PoliceOfficerHandler;
 
 public class PoliceOfficer {
     private static PoliceOfficer instance = null;

@@ -1,6 +1,6 @@
 package CMS;
 
-import CMS.DBHandler.NotificationHandler;
+import DBHandler.NotificationHandler;
 
 public class Notification {
     private String type;

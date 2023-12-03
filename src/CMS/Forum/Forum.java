@@ -2,7 +2,7 @@ package CMS.Forum;
 
 import java.util.ArrayList;
 
-import CMS.DBHandler.ForumHandler;
+import DBHandler.ForumHandler;
 
 public class Forum {
     private static Forum instance = null;

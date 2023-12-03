@@ -5,7 +5,7 @@ import java.sql.Time;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-import CMS.DBHandler.FIRHandler;
+import DBHandler.FIRHandler;
 
 public class FIR {
 

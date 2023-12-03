@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import CMS.*;
-import CMS.DBHandler.NotificationHandler;
+import DBHandler.NotificationHandler;
 import Scene.SharedData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

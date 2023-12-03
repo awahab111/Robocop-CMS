@@ -1,6 +1,6 @@
 package CMS.Forum;
 
-import CMS.DBHandler.PostHandler;
+import DBHandler.PostHandler;
 
 public class Post {
     private int id;  

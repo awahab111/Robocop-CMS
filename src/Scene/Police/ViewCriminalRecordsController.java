@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import CMS.CriminalRecord;
-import CMS.DBHandler.CriminalRecordHandler;
+import DBHandler.CriminalRecordHandler;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;

@@ -1,4 +1,4 @@
-package CMS.DBHandler;
+package DBHandler;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

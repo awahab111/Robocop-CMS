@@ -2,7 +2,7 @@ package Scene;
 
 import java.io.IOException;
 
-import CMS.DBHandler.PoliceOfficerHandler;
+import DBHandler.PoliceOfficerHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

@@ -3,7 +3,7 @@ package Scene;
 import java.io.IOException;
 
 import CMS.User;
-import CMS.DBHandler.UserLoginHandler;
+import DBHandler.UserLoginHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

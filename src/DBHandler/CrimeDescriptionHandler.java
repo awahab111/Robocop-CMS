@@ -1,4 +1,4 @@
-package CMS.DBHandler;
+package DBHandler;
 import java.sql.*;
 import java.util.ArrayList;
 

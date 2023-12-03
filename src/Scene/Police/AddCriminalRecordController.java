@@ -3,7 +3,7 @@ package Scene.Police;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import CMS.DBHandler.CriminalRecordHandler;
+import DBHandler.CriminalRecordHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

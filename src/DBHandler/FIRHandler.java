@@ -1,4 +1,4 @@
-package CMS.DBHandler;
+package DBHandler;
 
 import java.sql.Date;
 import java.sql.SQLException;

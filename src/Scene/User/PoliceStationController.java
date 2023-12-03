@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import CMS.PoliceStation;
-import CMS.DBHandler.PoliceStationHandler;
+import DBHandler.PoliceStationHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
